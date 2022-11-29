@@ -6,7 +6,7 @@ def network_alert(celcius: float):
     # To be implemented
     pass
 
-def alert_in_celcius(farenheit):
+def alert_in_celcius(farenheit: float):
     celcius = (farenheit - 32) * 5 / 9
     returnCode = network_alert(celcius)
     if returnCode != 200:
