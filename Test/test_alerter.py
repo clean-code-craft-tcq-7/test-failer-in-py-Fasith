@@ -15,8 +15,16 @@ def nertwork_alert_stub(temperature_reading_in_celcius):
 def test_alert_in_celcius(monkeypatch):
     monkeypatch.setattr(alerter, "network_alert", nertwork_alert_stub)
 
+    # Below threshold
     alert_in_celcius(100)
     assert(alert_failure_count == 0)
 
+    #At threshold
+    alert_in_celcius(212)       
+    assert(alert_failure_count == 0)
+
+    #Above threshold
     alert_in_celcius(500)
     assert(alert_failure_count == 1)
+
+    
